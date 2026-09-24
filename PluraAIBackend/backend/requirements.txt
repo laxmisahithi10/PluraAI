@@ -1,0 +1,9 @@
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+opencv-python-headless>=4.9.0
+numpy>=1.21.0
+Pillow>=9.0.0
+torch>=2.0.0
+torchvision>=0.15.0
+pymongo[srv]>=4.6.0

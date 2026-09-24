@@ -1,0 +1,58 @@
+# =========================
+# Python
+# =========================
+
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+**/venv/
+
+# =========================
+# Environment / Secrets
+# =========================
+
+.env
+**/.env
+
+# Keep example env files
+!.env.example
+!**/.env.example
+
+# =========================
+# Django
+# =========================
+
+db.sqlite3
+**/db.sqlite3
+*.log
+
+# =========================
+# IDE
+# =========================
+
+.vscode/
+.idea/
+
+# =========================
+# Jupyter
+# =========================
+
+.ipynb_checkpoints/
+
+# =========================
+# Python build
+# =========================
+
+*.egg-info/
+build/
+dist/
+
+# =========================
+# Uploaded/generated files
+# =========================
+
+**/uploads/*
+!**/uploads/.gitkeep

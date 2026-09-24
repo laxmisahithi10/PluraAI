@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block title %}Research — PLURA{% endblock %}
+
+{% block content %}
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <div class="inline-flex items-center gap-2 bg-medical-500/10 text-medical-600 text-xs font-semibold px-4 py-2 rounded-full mb-5 border border-medical-500/20">
+        Peer-Reviewed Publications
+      </div>
+      <h1 class="font-display font-bold text-4xl md:text-5xl text-slate-900 mb-4">Research Foundation</h1>
+      <p class="text-slate-500 max-w-xl mx-auto">PLURA is built on cutting-edge research in medical imaging, Vision Transformers, and AI-assisted diagnostics.</p>
+    </div>
+
+    <!-- Papers Grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {% for paper in papers %}
+      <div class="glass-panel p-7 group hover:-translate-y-1 transition-transform flex flex-col">
+        <div class="flex items-start justify-between gap-4 mb-4">
+          <div class="w-10 h-10 medical-gradient rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <span class="text-xs font-bold text-medical-500 bg-medical-500/10 px-3 py-1 rounded-full border border-medical-500/20 flex-shrink-0">{{ paper.year }}</span>
+        </div>
+
+        <h3 class="font-display font-bold text-lg text-slate-900 mb-2 leading-snug">{{ paper.title }}</h3>
+
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-slate-500 text-sm font-medium">{{ paper.authors }}</span>
+          <span class="text-slate-300">·</span>
+          <span class="text-slate-400 text-sm italic">{{ paper.journal }}</span>
+        </div>
+
+        <p class="text-slate-500 text-sm leading-relaxed flex-1 mb-5">{{ paper.abstract }}</p>
+
+        <div class="flex flex-wrap gap-2 mt-auto">
+          {% for tag in paper.tags %}
+          <span class="text-xs font-medium bg-slate-100 text-slate-600 px-3 py-1 rounded-full">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Bottom Note -->
+    <div class="mt-12 glass-panel p-6 flex items-start gap-4 max-w-2xl mx-auto">
+      <div class="w-10 h-10 bg-medical-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+        <svg class="w-5 h-5 text-medical-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <div>
+        <p class="font-semibold text-slate-800 text-sm mb-1">Research Disclaimer</p>
+        <p class="text-slate-500 text-sm leading-relaxed">PLURA is a research prototype. Results should not be used as a substitute for professional medical diagnosis. Always consult a qualified healthcare provider.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

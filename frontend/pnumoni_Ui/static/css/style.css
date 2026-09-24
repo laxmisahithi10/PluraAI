@@ -1,0 +1,37 @@
+/* PLURA — Custom Tailwind Extensions */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  border-radius: 1.5rem;
+}
+
+.medical-gradient {
+  background: linear-gradient(135deg, #0c91e9 0%, #0273c7 100%);
+}
+
+/* Smooth confidence bar animation */
+#confidence-bar {
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Drop zone active state */
+#drop-zone.drag-active {
+  border-color: #0c91e9;
+  background-color: rgba(12, 145, 233, 0.04);
+}
+
+/* Chat window scrollbar */
+#chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+#chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+#chat-messages::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 2px;
+}

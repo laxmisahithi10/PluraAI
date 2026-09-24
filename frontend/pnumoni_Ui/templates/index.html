@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+{% block title %}PLURA — AI-Powered Pneumonia Detection{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-20 pb-28">
+  <!-- Background blobs -->
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-medical-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-medical-600/8 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <div class="inline-flex items-center gap-2 bg-medical-500/10 text-medical-600 text-xs font-semibold px-4 py-2 rounded-full mb-6 border border-medical-500/20">
+      <span class="w-1.5 h-1.5 bg-medical-500 rounded-full animate-pulse"></span>
+      Vision Transformer · Symmetry Analysis · Clinical-Grade AI
+    </div>
+
+    <h1 class="font-display font-extrabold text-5xl md:text-7xl text-slate-900 leading-tight mb-6">
+      Detect Pneumonia<br/>
+      <span class="text-transparent bg-clip-text medical-gradient">with AI Precision</span>
+    </h1>
+
+    <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+      PLURA analyzes chest X-rays using Vision Transformers to detect pneumonia by comparing bilateral lung symmetry — the same reasoning used by expert radiologists.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/detect" class="medical-gradient text-white font-semibold px-8 py-4 rounded-2xl hover:opacity-90 hover:shadow-xl hover:shadow-medical-500/30 transition-all text-base">
+        Upload X-Ray Now
+      </a>
+      <a href="/research" class="bg-white text-slate-700 font-semibold px-8 py-4 rounded-2xl border border-slate-200 hover:border-medical-500/40 hover:text-medical-500 transition-all text-base shadow-sm">
+        View Research
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="mt-16 grid grid-cols-3 gap-6 max-w-lg mx-auto">
+      <div class="glass-panel p-4 text-center">
+        <p class="font-display font-bold text-2xl text-medical-500">97.3%</p>
+        <p class="text-slate-500 text-xs mt-1">Accuracy</p>
+      </div>
+      <div class="glass-panel p-4 text-center">
+        <p class="font-display font-bold text-2xl text-medical-500">&lt;2s</p>
+        <p class="text-slate-500 text-xs mt-1">Analysis Time</p>
+      </div>
+      <div class="glass-panel p-4 text-center">
+        <p class="font-display font-bold text-2xl text-medical-500">ViT</p>
+        <p class="text-slate-500 text-xs mt-1">Architecture</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works — Parallax Hero + Overlapping Glass Card -->
+<section class="relative">
+
+  <!-- Parallax Background — 500px tall -->  
+  <div class="relative h-[500px] overflow-hidden">
+    <div class="absolute inset-0 bg-fixed bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=100&w=2400');"></div>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-[1px]"></div>
+    <!-- Centered label inside parallax -->
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-semibold px-4 py-2 rounded-full mb-5 backdrop-blur-sm">
+        <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+        Clinical-Grade Pipeline
+      </div>
+      <h2 class="font-display font-extrabold text-4xl md:text-5xl text-white mb-4 leading-tight">How PLURA Works</h2>
+      <p class="text-white/70 text-base md:text-lg max-w-xl leading-relaxed">A three-stage AI pipeline that mirrors the diagnostic reasoning of an expert radiologist.</p>
+    </div>
+  </div>
+
+  <!-- Overlapping Glass Card — pulls up with -mt-32 -->
+  <div class="relative z-20 max-w-5xl mx-auto px-6 -mt-32 pb-20">
+    <div class="bg-white/80 backdrop-blur-md rounded-3xl border border-medical-100 shadow-2xl overflow-hidden">
+
+      <!-- Steps — vertical list -->
+      <div class="divide-y divide-slate-100">
+
+        <!-- Step 1 -->
+        <div class="flex items-start gap-6 p-8 group hover:bg-medical-500/[0.02] transition-colors">
+          <div class="w-16 h-16 flex-shrink-0 bg-medical-500 rounded-2xl flex items-center justify-center shadow-lg shadow-medical-500/20 group-hover:scale-105 transition-transform">
+            <span class="font-display font-extrabold text-2xl text-white">1</span>
+          </div>
+          <div class="flex-1 pt-1">
+            <div class="flex items-center gap-3 mb-2">
+              <h3 class="font-display font-bold text-xl text-slate-900">Lung Segmentation</h3>
+              <span class="text-xs font-semibold text-medical-500 bg-medical-500/10 px-2.5 py-0.5 rounded-full">Stage 01</span>
+            </div>
+            <p class="text-slate-500 text-sm leading-relaxed max-w-2xl">Isolates the left and right lung regions from the raw chest X-ray using a dedicated segmentation model. Background structures are removed, focusing all subsequent analysis exclusively on pulmonary tissue.</p>
+          </div>
+          <!-- Decorative icon -->
+          <div class="hidden md:flex w-10 h-10 rounded-xl bg-slate-100 items-center justify-center flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex items-start gap-6 p-8 group hover:bg-medical-500/[0.02] transition-colors">
+          <div class="w-16 h-16 flex-shrink-0 bg-medical-500 rounded-2xl flex items-center justify-center shadow-lg shadow-medical-500/20 group-hover:scale-105 transition-transform">
+            <span class="font-display font-extrabold text-2xl text-white">2</span>
+          </div>
+          <div class="flex-1 pt-1">
+            <div class="flex items-center gap-3 mb-2">
+              <h3 class="font-display font-bold text-xl text-slate-900">Symmetry Comparison</h3>
+              <span class="text-xs font-semibold text-medical-500 bg-medical-500/10 px-2.5 py-0.5 rounded-full">Stage 02</span>
+            </div>
+            <p class="text-slate-500 text-sm leading-relaxed max-w-2xl">Uses Vision Transformers (ViT) to compare texture and density between the left and right lungs via self-attention. Asymmetric opacity patterns — a primary hallmark of pneumonia — are detected with high sensitivity across patch embeddings.</p>
+          </div>
+          <div class="hidden md:flex w-10 h-10 rounded-xl bg-slate-100 items-center justify-center flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex items-start gap-6 p-8 group hover:bg-medical-500/[0.02] transition-colors">
+          <div class="w-16 h-16 flex-shrink-0 bg-medical-500 rounded-2xl flex items-center justify-center shadow-lg shadow-medical-500/20 group-hover:scale-105 transition-transform">
+            <span class="font-display font-extrabold text-2xl text-white">3</span>
+          </div>
+          <div class="flex-1 pt-1">
+            <div class="flex items-center gap-3 mb-2">
+              <h3 class="font-display font-bold text-xl text-slate-900">Context-Aware Analysis</h3>
+              <span class="text-xs font-semibold text-medical-500 bg-medical-500/10 px-2.5 py-0.5 rounded-full">Stage 03</span>
+            </div>
+            <p class="text-slate-500 text-sm leading-relaxed max-w-2xl">Mimics radiologist reasoning by evaluating local abnormalities within a global thoracic context. Regional findings are interpreted relative to the full lung architecture, reducing false positives from anatomical variation.</p>
+          </div>
+          <div class="hidden md:flex w-10 h-10 rounded-xl bg-slate-100 items-center justify-center flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Card Footer -->
+      <div class="px-8 py-5 bg-slate-50/80 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-slate-400 text-xs">Pipeline runs end-to-end in under 2 seconds on standard hardware.</p>
+        <a href="/detect" class="bg-medical-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-medical-600 hover:shadow-lg hover:shadow-medical-500/25 transition-all flex-shrink-0">
+          Try It Now →
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA Banner -->
+<section class="py-20">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="medical-gradient rounded-3xl p-12 text-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+      </div>
+      <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-4 relative">Ready to analyze your X-ray?</h2>
+      <p class="text-white/80 mb-8 relative">Upload a chest X-ray and receive an AI-powered analysis in under 2 seconds.</p>
+      <a href="/detect" class="bg-white text-medical-600 font-bold px-8 py-4 rounded-2xl hover:shadow-xl transition-all inline-block relative">
+        Start Analysis
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
