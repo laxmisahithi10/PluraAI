@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 MODEL_PATH = BASE_DIR.parent.parent / 'vitcal_best (1).pth'
 
 # MongoDB Atlas
-MONGO_URI = 'mongodb+srv://ginikuntahasini_db_user:ysYr4amc3Pf3hQeH@cluster0.nkehvku.mongodb.net/?appName=Cluster0'
+MONGO_URI = 'Enter_Your_MongoDB_URL'
 MONGO_DB_NAME = 'plura_db'
 
 
